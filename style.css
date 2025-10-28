@@ -1,0 +1,51 @@
+/* 
+::selection, for change the blue line when selecting
+
+border-radius: px, %; for rounded corner
+
+justify-content aligns horizontally accepts:
+flex-start: align to left side of container.
+flex-end: Same but right 
+center: Centers items in a container :).
+space-between: Items display with equal spacing between them.
+space-around: Items display with equal spacing around them
+
+align-items aligns vertically accepts:
+flex-start: align to top of container.
+flex-end: align to bottom of container.
+center: Centers items in a container :).
+baseline: display at baseline of container.
+stretch: stretch to fit the container.
+
+flex-direction defines the direction items are placed in the container accepts:
+row: placed the same as the text direction.
+row-reverse:opposite to the text direction.
+column: Items are placed top to bottom.
+column-reverse: Items are bottom to top.
+
+Sometimes reverse is not enough. In this case we can apply order to individual items. By default, items have a value of 0, but we can use this property to set it to a positive or negative value (-2, -1, 0, 1, 2).
+Use the order property to reorder items.
+
+align-self accepts the same values as align-items and its for a specific item.
+
+flex-wrap accepts:
+nowrap: Every item is fit to a single line.
+wrap: Items wrap around to additional lines.
+wrap-reverse: wrap around to lines in reverse.
+
+The two flex-direction and flex-wrap are used so often together, the short property flex-flow created to combine them. accepts the value of the two properties separated by a space.
+For example, flex-flow: row wrap;
+
+align-content set how multiple lines are spaced apart from each other. takes:
+
+flex-start: packed at the top of a container.
+flex-end: packed at the bottom of a container.
+center: packed vertical center of a container.
+space-between: display with spacing between.
+space-around: display with spacing around.
+stretch: stretched to fit the container.
+This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.
+
+
+
+*/
