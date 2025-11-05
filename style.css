@@ -1,3 +1,182 @@
+/* mandatory things :) */
+html {
+  font-family: sans-serif, "Franklin Gothic Medium", "Arial Narrow", Arial;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  width: 24px;
+}
+
+.usls {
+  border-radius: 1rem;
+  border: 0;
+  padding: 0.1rem 0.3rem;
+  color: white;
+  background-color: rgb(0, 151, 215);
+  cursor: pointer;
+  justify-self: right;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+/* content of the body */
+body {
+  overflow: hidden;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 15% 25% 20% 20% 20%;
+  grid-template-rows: repeat(5, 20%);
+}
+/* the header */
+#head-container {
+  display: grid;
+  grid-template-columns: 2.5rem 7fr 2rem 2rem 2fr;
+  grid-template-rows: 1fr 2fr;
+  grid-column: 2/6;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.444);
+}
+
+#search-icon {
+  justify-self: center;
+  align-self: center;
+  grid-column: 1;
+}
+
+#search-box {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.285);
+  grid-column: 2;
+  border: 0px;
+  width: 70%;
+}
+
+#bell {
+  justify-self: right;
+  align-self: center;
+}
+
+#profile-picture {
+  border-radius: 1rem;
+  justify-self: center;
+  align-self: center;
+}
+
+#name {
+  align-self: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+#big-profile-picture {
+  border-radius: 1rem;
+  width: 2rem;
+  height: 2rem;
+  justify-self: center;
+  align-self: center;
+}
+
+#hi {
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
+#rassas {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.button-container {
+  grid-column: 3/6;
+  justify-self: center;
+  align-self: center;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  overflow-y: auto;
+  min-height: 0;
+  grid-column: 2/6;
+  grid-row: 2/6;
+  height: 100%;
+}
+
+#main {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 8%;
+  height: 100%;
+  gap: 1rem;
+  margin-right: 10px;
+}
+
+#my-project {
+  width: 95%;
+  height: 100%;
+  padding-left: 10px;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  background-color: yellow;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+#inside {
+  background-color: white;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.645);
+  border-radius: 6px;
+}
+
+#dashboard {
+  padding-left: 0.3rem;
+  font-size: 0.7rem;
+  background-color: rgb(0, 115, 255);
+  color: white;
+  grid-row: 1/6;
+}
+
+#side-title {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#right-side {
+  display: grid;
+  grid-template-rows: 1.1rem 1fr 1.1rem 1fr;
+}
+
+#announcements {
+  display: grid;
+  grid-template-columns: 0.3rem 1fr 0.3rem;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 10px;
+  border-radius: 0.5rem;
+  box-shadow: 5px 1px 10px black;
+  margin-right: 3px;
+}
+
+#announcement-box1 {
+  grid-column: 2;
+  margin-top: 0;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+#announcement-box2 {
+  grid-column: 2;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+#announcement-box3 {
+  grid-column: 2;
+}
+
 /* 
 ::selection, for change the blue line when selecting
 
@@ -47,5 +226,43 @@ stretch: stretched to fit the container.
 This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.
 
 
+display: grid; property:
+grid-template-columns: 20% 20% 20% 20% 20%;
+to set five equal columns.
+or grid-template-columns: repeat(5, 20%)
+grid-template-rows: 20% 20% 20% 20% 20%;
+to set five equal rows.
+or grid-template-rows: repeat(5, 20%)
+you can put 100px or 4rem or 30% not just the percentages.
+
+grid-template-rows + grid-template-columns = grid-template, seperated with slash. like:
+grid-template: 50% 50% / 200px; two rows that are 50% and one column that is 200px.
+
+fr (fractions) which is only in grid layout, it split the screen equally. like: grid-template-column: 1fr 3fr; makes two line one is 1/4 the screen width and the other one is 3/4 the screen width.
+you can combine fr and rem or px. like:
+grid-template-column: 50px 1fr 1fr 1fr 50px;
+
+grid-column-start: move items in columns like: grid-column-start: 3; moves to the third column 
+
+grid-row-start: move items in rows like: grid-row-start: 5; moves to the fifth row
+
+grid-column-start by default will span exactly one column. extend the item across multiple columns by grid-column-end property. like:
+grid-column-start:1;
+grid-column-end:4;
+get the 1,2,3 columns.
+
+Instead of start and end positions, you can define it based on your desired column width using the span keyword. Keep in mind that span only works with positive values, but the other on top works with negative balues with no issues. like:
+grid-column-end: span 4; get the column and the three right to it (end = right, start = left)
+
+grid-column-start + grid-column-end combined = grid-column a property accept both values separated by a slash. like:
+grid-column: 2 / 5; get second column to fourth column 
+
+all of grid-column works for grid-row.
+
+grid-row + grid-column = grid-area. like:
+grid-area: 2(row-start) / 4(column-start) / 3(row-end) / 1(column-end);
+
+order is default from the source code (html) = 0, you can change this using order property. like:
+#red-box{order = 1} will make the red box the rightest (if there's no higher orders)
 
 */
